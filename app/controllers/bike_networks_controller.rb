@@ -1,13 +1,13 @@
 class BikeNetworksController < ApplicationController
-
-  def new
-    bike_network = BikeNetwork.new
+  
+  def show
+    bike_network = BikeNetwork.find(params[:id])
 
     render json: bike_network
   end
 
-  def show
-    bike_network = BikeNetwork.find(params[:id])
+  def new
+    bike_network = BikeNetwork.new
 
     render json: bike_network
   end
