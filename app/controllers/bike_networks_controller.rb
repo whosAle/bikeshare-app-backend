@@ -1,0 +1,2 @@
+class BikeNetworksController < ApplicationController
+end
