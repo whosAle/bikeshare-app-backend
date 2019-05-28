@@ -1,5 +1,5 @@
 class BikeNetworksController < ApplicationController
-  
+
   def show
     bike_network = BikeNetwork.find(params[:id])
 
@@ -25,7 +25,7 @@ class BikeNetworksController < ApplicationController
   private
 
   def bike_network_params
-    params.require(:bike_network).permit(:name)
+    params.require(:bike_network).permit(:name, :location, :company, :num_of_stations, :free_bikes)
   end
 
 end
