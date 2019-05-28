@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+####  Users  ####
 User.create(name: "Boos")
 User.create(name: "Andro 3000")
 
+####  Bike Networks  ####
 BikeNetwork.create(location: "New York City", name:"City Cycles", company:"sycle-group", num_of_stations: 4, free_bikes: 0)
 
+####  Trips  ####
 Trip.create(user_id: 1, bike_network_id: 1, times_used: 3, start_time: Time.new, end_time: Time.new)
 Trip.create(user_id: 2, bike_network_id: 1, times_used: 3, start_time: Time.new, end_time: Time.new)
