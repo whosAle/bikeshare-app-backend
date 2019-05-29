@@ -14,10 +14,12 @@ class TripsController < ApplicationController
   end
 
   def create
-
-    bn = BikeNetwork.create(params.require(:trip).permit(:name, :location, :company, :num_of_stations, :free_bikes))
-
-    trip = Trip.create(trip_params(:user_id, bn.id, :times_used, :start_time, :end_time))
+    pm = params.require(:bike_network).permit(:name, :location, :company, :num_of_stations, :free_bikes)
+    bn = BikeNetwork.create(pm)
+    byebug
+    network_id = bn.id
+    # trip = Trip.create(trip_params(:user_id, bike_network_id: bn.id, :times_used, :start_time, :end_time))
+    trip = Trip.create(user_id: params[:trip][:user_id], bike_network_id: network_id )
 
     if !trip.valid?
       trip = trip.errors.full_messages
