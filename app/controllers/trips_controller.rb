@@ -15,7 +15,7 @@ class TripsController < ApplicationController
 
   def create
 
-    bn = BikeNetwork.create(params.require(:bike_network).permit(:name, :location, :company, :num_of_stations, :free_bikes))
+    bn = BikeNetwork.create(params.require(:trip).permit(:name, :location, :company, :num_of_stations, :free_bikes))
 
     trip = Trip.create(trip_params(:user_id, bn.id, :times_used, :start_time, :end_time))
 
