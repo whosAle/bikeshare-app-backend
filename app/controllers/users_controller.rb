@@ -26,11 +26,18 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(name: params[:name])
 
+    # if !user
+    #   user = {error: "User is not Found!"}
+    # end
+
     if !user
-      user = {error: "User is not Found!"}
+      response = {error: "User is not Found!"}
+      render json: response, status: 489
+    else
+
+      render json: user
     end
 
-    render json: user
   end
 
   private
