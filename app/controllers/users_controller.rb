@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.find_by(name: params[:name])
+    user = User.find_or_create_by(name: params[:name])
 
     # if !user
     #   user = {error: "User is not Found!"}
