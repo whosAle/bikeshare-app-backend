@@ -25,7 +25,7 @@ class TripsController < ApplicationController
       trip = trip.errors.full_messages
     end
 
-    render json: trip
+    render json: bn
   end
 
 

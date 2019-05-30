@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       render json: response, status: 489
     else
 
-      render json: user
+      render json: UsersSerializer.new(user).to_json
     end
 
   end
