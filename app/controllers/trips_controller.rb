@@ -39,8 +39,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    trip.destroy
+    trip = Trip.find_by(trip_params(:user_id, :bike_network_id))
 
+    trip.destroy
     render json: trip
   end
 
